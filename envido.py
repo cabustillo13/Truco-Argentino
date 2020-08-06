@@ -16,7 +16,7 @@ def contarEnvido(carta1,carta2,carta3):
     palo3, aux3 = extraerDatos(carta3)
 
     if ((palo1 == palo2) and (palo2 == palo3)):
-        print("Flor")       # Flor significa que las 3 cartas son del mismo palo
+        #print("Flor")       # Flor significa que las 3 cartas son del mismo palo
         
         suma = 20 + aux1+aux2+aux3
         
@@ -27,19 +27,31 @@ def contarEnvido(carta1,carta2,carta3):
             if ((aux1 > auxMin) and (aux1 < auxMax)): suma = 20 + aux1 + auxMax
             if ((aux2 > auxMin) and (aux2 < auxMax)): suma = 20 + aux2 + auxMax
             if ((aux3 > auxMin) and (aux3 < auxMax)): suma = 20 + aux3 + auxMax
-            
-        print("La suma de la flor es: {}".format(suma))
+        
+        texto = "FLOR. La suma de la flor es: " + str(suma)
+        #print("La suma de la flor es: {}".format(suma))
         
     elif ((palo1 == palo2) and (palo2 != palo3)):
         suma = 20 + aux1 + aux2
-        print("La suma del envido es: {}".format(suma))
+        texto = "La suma del envido es: " + str(suma)
+        #print("La suma del envido es: {}".format(suma))
 
     elif ((palo1 == palo3) and (palo1 != palo2)):
         suma = 20 + aux1 + aux3
-        print("La suma del envido es: {}".format(suma))
+        texto = "La suma del envido es: " + str(suma)
+        #print("La suma del envido es: {}".format(suma))
+        
+    elif ((palo2 == palo3) and (palo1 != palo2)):
+        suma = 20 + aux2 + aux3
+        texto = "La suma del envido es: " + str(suma)
+        #print("La suma del envido es: {}".format(suma))
         
     else:
-        print("Mentiste. No tenias nada para el envido")
+        #print("Mentiste. No tenias nada para el envido")
         suma = max([aux1,aux2,aux3])
-        print("La suma del envido es: {}".format(suma))
+        texto = "La suma del envido es: " + str(suma)
+        #print("La suma del envido es: {}".format(suma))
+    
+    
+    return texto
         

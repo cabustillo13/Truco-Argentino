@@ -1,4 +1,3 @@
-import SSIM
 import envido
 import cv2
 
@@ -16,22 +15,16 @@ arch.close()
 # Permite borrar \n que hay en la lista
 arreglo = map(lambda s: s.strip(), arreglo) 
 
-#####################
-## Cargar imagenes ##
-#####################
-# Propiedades de la imagen
-path = "./Cartas/"
+##########
+## Main ##
+##########
+
+texto = envido.contarEnvido(arreglo[0],arreglo[1],arreglo[2])
+
+path = "./Resultados/"
 formato = ".png"
 
-carta1 = cv2.imread(path+arreglo[0]+formato)
-carta2 = cv2.imread(path+arreglo[1]+formato)
-carta3 = cv2.imread(path+arreglo[2]+formato)
-
-####################
-## Que carta es? ##
-####################
-valor1 = SSIM.encontrarCarta(carta1,path,formato)
-valor2 = SSIM.encontrarCarta(carta2,path,formato)
-valor3 = SSIM.encontrarCarta(carta3,path,formato)
-
-envido.contarEnvido(valor1,valor2,valor3)
+imagen = cv2.imread(path+"photo0"+formato)
+fuente = cv2.FONT_HERSHEY_SIMPLEX
+cv2.putText(imagen, texto, (10,365), fuente, 1, (151, 112, 21), 2)
+cv2.imwrite(path+"photo1"+formato, imagen)
