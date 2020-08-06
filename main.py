@@ -25,6 +25,6 @@ path = "./Resultados/"
 formato = ".png"
 
 imagen = cv2.imread(path+"photo0"+formato)
-fuente = cv2.FONT_HERSHEY_SIMPLEX
-cv2.putText(imagen, texto, (10,365), fuente, 1, (151, 112, 21), 2)
+fuente = cv2.FONT_HERSHEY_TRIPLEX
+cv2.putText(imagen, texto, (10,365), fuente, 1, (256, 256, 256), 1)
 cv2.imwrite(path+"photo1"+formato, imagen)
