@@ -1,5 +1,9 @@
 import cv2
 import numpy as np
+import random
+
+# Colocar las 3 cartas en una sola imagen
+# Bibliografia: https://www.it-swarm.dev/es/python/usando-opencv-para-superponer-una-imagen-transparente-en-otra-imagen/829146437/
 
 def superponerImagenes(background, overlay, x, y):
 
@@ -35,6 +39,10 @@ def superponerImagenes(background, overlay, x, y):
 
     return background 
 
+# Elegir aleatoriamente las 3 cartas
+def elegirCarta():
+    return (random.choice(palo) + random.choice(numero))
+
 # Crear una mano con 3 cartas distintas
 path= "./Cartas/"
 formato = ".png"
@@ -44,12 +52,6 @@ fondo = cv2.imread(path+"Fondo"+formato)
 
 palo = ["B","C","E","O"]
 numero = ["1","2","3","4","5","6","7","10","11","12"]
-
-# Elegir aleatoriamente las 3 cartas
-import random
-
-def elegirCarta():
-    return (random.choice(palo) + random.choice(numero))
 
 nombre1 = elegirCarta()
 nombre2 = elegirCarta()
@@ -72,4 +74,10 @@ aux = superponerImagenes(aux, img3, 427,15)
 
 cv2.imwrite("./Resultados/photo0.png", aux)
 
-# Bibliografia: https://www.it-swarm.dev/es/python/usando-opencv-para-superponer-una-imagen-transparente-en-otra-imagen/829146437/
+# Guardar una lista en un archivo .txt 
+vector = [nombre1,nombre2,nombre3]
+        
+with open ("cartas.txt","w")as fp:
+      for line in vector:
+          fp.write(line+"\n")
+
