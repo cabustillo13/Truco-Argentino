@@ -36,3 +36,49 @@ El máximo valor que se puede obtener en el envido es 33. También con la flor.
 En caso de que se tenga flor y la suma de las 3 cartas supere 33. Solo se deben sumar las dos cartas con mayor valor más 20.
 
 _Ejemplo: Sí se tiene las siguientes cartas: 5 de espada, 7 de espada y 3 de espada. El envido es: 5+7 + 20 = 32_
+
+![Flor](https://github.com/cabustillo13/Truco-Argentino/blob/master/Ejemplo/Screenshot4.png)
+
+**¿CÓMO FUNCIONA?
+
+- **crearPartida.py**
+
+Se elige aleatoriamente 3 cartas (se corrobora que las 3 sean distintas, debido que en la baraja española las cartas no se repiten). Y esas 3 imágenes las coloca en una sola imagen. Ésto permite crear una _mano_ o una nueva partida.
+
+- **main.py**
+
+Se realiza la sumatoria del envido o flor de las cartas.
+
+- **interfaz.py**
+
+Muestra una interfaz en PyQt5. Se muestra una mano y al apretar _Envido_ se carga otra imagen con la sumatoria del envido o flor.
+
+![Ejemplo](https://github.com/cabustillo13/Truco-Argentino/blob/master/Ejemplo/Screenshot1.png)
+
+**LIBRERÍAS UTILIZADAS**
+
+- cv2
+- PyQt5
+
+**¿CÓMO EJECUTAR EL PROGRAMA?**
+
+Ejecute desde su consola o terminal: ```sh. /play.sh```
+
+Lo que hace es ejecutar los programas en el siguiente orden:
+
+1) ```python crearPartida.py```
+
+2) ```python main.py```
+
+3) ```python3 interfaz.py```
+
+_NOTA: En mi caso, por una cuestión de versiones crearPartida.py y main.py están en Python 2.7. Mientras que interfaz.py debido a las librería PyQt5, está en python3._
+
+**RECURSOS**
+
+- Las imágenes de la baraja española fueron obtenidas de Wikipedia bajo la licencia Creative Commons Genérica de Atribución/Compartir-Igual 3.0. 
+![Ver Archivo](https://es.wikipedia.org/wiki/Archivo:Baraja_espa%C3%B1ola_completa.png)
+
+- La imagen de inicio del programa fue obtenida de Pixabay. La licencia ampara: gratis para usos comerciales y no es necesario reconocimiento.
+
+**¡Espero que hayas disfrutado este código!. Éxitos jugando al truco argentino.**
