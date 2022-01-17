@@ -77,7 +77,7 @@ _NOTA: En mi caso, por una cuestión de versiones crearPartida.py y main.py est�
 **RECURSOS**
 
 - Las imágenes de la baraja española fueron obtenidas de Wikipedia bajo la licencia Creative Commons Genérica de Atribución/Compartir-Igual 3.0. 
-![Ver Fuente](https://es.wikipedia.org/wiki/Archivo:Baraja_espa%C3%B1ola_completa.png)
+[Ver Fuente](https://es.wikipedia.org/wiki/Archivo:Baraja_espa%C3%B1ola_completa.png)
 
 - La imagen de inicio del programa fue obtenida de Pixabay. La licencia ampara: gratis para usos comerciales y no es necesario reconocimiento.
 
